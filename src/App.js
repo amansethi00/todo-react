@@ -14,7 +14,7 @@ function App() {
     setNewItem(event.target.value);
   } 
   function addToList(event){
-        if(event.key ==="Enter"){
+        if(event.key ==="Enter" && newItem!==""){
          
           let newArr = [...OPTIONS,newItem];
           setOptions(newArr);
@@ -36,7 +36,7 @@ function App() {
       
           <h1 className="head">TODO</h1>
            
-        <div><input type="text" className="list" placeholder="Create a new todo" onKeyDown={addToList} onChange={fetchValue}></input></div>
+        <div><input type="text" className="list" placeholder="Create a new todo" onKeyPress={addToList} onChange={fetchValue}></input></div>
         <div className="useroutput" >
         {OPTIONS.map((value, index) => {
           return (
