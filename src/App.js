@@ -16,9 +16,9 @@ function App() {
   function addToList(event){
         if(event.key ==="Enter"){
          
-          OPTIONS.push(newItem);
-          setOptions(OPTIONS);
-          console.log(OPTIONS);
+          let newArr = [...OPTIONS,newItem];
+          setOptions(newArr);
+          console.log(newArr);
         }
         
       
