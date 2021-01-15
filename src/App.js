@@ -12,7 +12,7 @@ function App() {
   const [OPTIONS,setOptions] = useState(["One", "Two", "Three"]);
   function fetchValue(event){
     setNewItem(event.target.value);
-  }
+  } 
   function addToList(event){
         if(event.key ==="Enter"){
          
@@ -30,7 +30,7 @@ function App() {
     <div className="App">
       
       <div className="header-background">
-      <img src={bgLight} alt="background-image" className="bg-header"/>
+      <img src={bgLight} ALT="hello" className="bg-header"/>
       </div>
       <div className="container">
       
