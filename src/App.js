@@ -1,14 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
 import bgLight from "./images/bg-desktop-light.jpg";
 import bgDark from "./images/bg-desktop-dark.jpg";
 import bgLightMobile from "./images/bg-mobile-light.jpg";
 import bgLightDark from "./images/bg-mobile-dark.jpg";
 
-const OPTIONS = ["One", "Two", "Three"];
+
 function App() {
+  const [newItem,setNewItem]=useState("");
+  const [OPTIONS,setOptions] = useState(["One", "Two", "Three"]);
+  function fetchValue(event){
+    setNewItem(event.target.value);
+  }
+  function addToList(event){
+        if(event.key ==="Enter"){
+         
+          OPTIONS.push(newItem);
+          setOptions(OPTIONS);
+          console.log(OPTIONS);
+        }
+        
+      
+  }
+ 
+  
   return (
+   
     <div className="App">
+      
       <div className="header-background">
       <img src={bgLight} alt="background-image" className="bg-header"/>
       </div>
@@ -16,11 +36,18 @@ function App() {
       
           <h1 className="head">TODO</h1>
            
-        <div><input type="text" className="list" placeholder="Create a new todo"></input></div>
-        <div className="list-container">
+        <div><input type="text" className="list" placeholder="Create a new todo" onKeyDown={addToList} onChange={fetchValue}></input></div>
+        <div className="useroutput" >
+        {OPTIONS.map((value, index) => {
+          return (
+            <div key={index} id="output" className="output-list">
+              <input type="checkbox"></input> {value}
+              <br/> 
+            </div>
 
-
-        </div>
+          );
+        })}
+      </div>
          items left
 
           All
