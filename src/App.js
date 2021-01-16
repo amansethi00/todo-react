@@ -57,7 +57,7 @@ function App() {
 
       // event.target.checked =true;
       console.log(event);
-      console.log("completd m ho aap janab");
+      console.log("in completed");
     }
     else{
       console.log(event.target.checked);
