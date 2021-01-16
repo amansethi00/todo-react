@@ -3,6 +3,7 @@
 }
 :root {
   --light: white;
+  --spancolor: blue;
 }
 .App-logo {
   height: 40vmin;
@@ -79,4 +80,18 @@
   outline: none;
   background-color: var(--light);
   border-bottom: 1px solid black;
+  word-wrap: break-word;
+}
+.span-bar {
+  display: flex;
+  flex-direction: row;
+}
+.span-items {
+  margin: 0.5rem 0.5rem;
+  font-weight: lighter;
+  font-size: smaller;
+  cursor: pointer;
+}
+#all {
+  color: var(--spancolor);
 }
